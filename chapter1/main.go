@@ -15,6 +15,7 @@ func main() {
 
 	http.HandleFunc("/", homecontroller.Index)
 	http.HandleFunc("/listguests", homecontroller.ListGuests)
+	http.HandleFunc("/form", homecontroller.ReplyHandler)
 
 	err := http.ListenAndServe(":5555", nil)
 
