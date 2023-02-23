@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"sort"
+)
 
 func slice1() {
 	fmt.Println("slice1()")
@@ -155,7 +159,7 @@ func slice6() {
 	fmt.Println("Len of arr3:", len(arr3))
 	fmt.Println("Cap of arr3:", cap(arr3))
 
-	arr2 = append(arr2, "Tekila")
+	arr2 = append(arr2, "Tequila")
 
 	fmt.Println()
 
@@ -259,7 +263,7 @@ func slice9() {
 	fmt.Println(arr2)
 	fmt.Println(arr3)
 
-	// Copy funcion does not cause creating new underlying array
+	// Copy function does not cause creating new underlying array
 	copy(arr3, arr2)
 
 	fmt.Println()
@@ -298,4 +302,86 @@ func slice10() {
 	fmt.Println(arr1)
 	fmt.Println(arr2)
 	fmt.Println(arr3)
+}
+
+func slice11() {
+	fmt.Println("slice11()")
+	arr1 := []string{"Milk", "Bread", "Beer", "Wine"}
+	arr2 := []string{"Tequila", "Whiskey"}
+
+	fmt.Println()
+	fmt.Println(arr1)
+	copy(arr1, arr2)
+	fmt.Println(arr2)
+	fmt.Println(arr1)
+}
+
+func slice12() {
+	fmt.Println("slice12()")
+	arr1 := []string{"Milk", "Bread", "Beer", "Wine"}
+	arr2 := []string{"Tequila", "Whiskey"}
+
+	fmt.Println()
+	fmt.Println(arr2)
+	copy(arr2, arr1)
+	fmt.Println(arr1)
+	fmt.Println(arr2)
+}
+
+func slice13() {
+	fmt.Println("slice13()")
+	arr1 := []string{"Milk", "Bread", "Beer", "Wine"}
+
+	fmt.Println()
+	fmt.Println(arr1)
+	arr1 = append(arr1[:1], arr1[2:]...)
+	fmt.Println(arr1)
+	fmt.Println("Len:", len(arr1))
+	fmt.Println("Cap:", cap(arr1))
+}
+
+func slice14() {
+	fmt.Println("slice14()")
+	arr1 := []string{"Milk", "Bread", "Beer", "Wine"}
+
+	fmt.Println()
+	fmt.Println(arr1)
+	for index, value := range arr1[1:3] {
+		fmt.Println("Index:", index, "value:", value)
+	}
+}
+
+func slice15() {
+	fmt.Println("slice15()")
+	arr1 := []string{"Milk", "Bread", "Beer", "Wine"}
+	sort.Strings(arr1)
+
+	fmt.Println()
+	fmt.Println(arr1)
+}
+
+func slice16() {
+	fmt.Println("slice16()")
+	arr1 := []string{"Milk", "Bread", "Beer", "Wine"}
+	arr2 := []string{"Tequila", "Whiskey"}
+
+	fmt.Println("arr1 == arr2: ", reflect.DeepEqual(arr1, arr2))
+}
+
+func slice17() {
+	fmt.Println("slice17()")
+	arr1 := []string{"Milk", "Bread", "Beer", "Wine"}
+	arr2Ptr := (*[2]string)(arr1) // having pointer to underlying array
+	arr2 := *arr2Ptr              // copying values to the new array
+
+	fmt.Println(arr1)
+	fmt.Println(arr2)
+	fmt.Println(*arr2Ptr)
+
+	(*arr2Ptr)[1] = "Whiskey"
+	fmt.Println()
+	fmt.Println(arr1)
+	fmt.Println(arr2)
+	fmt.Println(*arr2Ptr)
+
 }
