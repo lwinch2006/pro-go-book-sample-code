@@ -407,3 +407,4 @@ interfaces
 packages
 composition
 goroutines
+errors
