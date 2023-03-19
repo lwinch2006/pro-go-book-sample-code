@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println("Chapter 4")
 
 	const price, tax float32 = 275.00, 27.5
 	const quantity, inStock = 2, true

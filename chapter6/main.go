@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	fmt.Println("Chapter 6")
+
 	ifConditions()
 	fmt.Println()
 	ifWithInitStatement()

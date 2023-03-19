@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	fmt.Println("Chapter 7")
 
 	fmt.Println()
 	arrays1()

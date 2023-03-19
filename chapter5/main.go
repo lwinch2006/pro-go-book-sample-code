@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	fmt.Println("Chapter 5")
 
 	fmt.Println()
