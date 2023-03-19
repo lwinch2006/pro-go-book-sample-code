@@ -408,3 +408,4 @@ packages
 composition
 goroutines
 errors
+strings
