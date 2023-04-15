@@ -256,15 +256,15 @@ func ReadersWriters12() {
 	for i := 0; true; {
 		end := i + 5
 		if end > len(text) {
-			w2.Write([]byte(text[i:]))
+			_, _ = w2.Write([]byte(text[i:]))
 			break
 		}
 
-		w2.Write([]byte(text[i:end]))
+		_, _ = w2.Write([]byte(text[i:end]))
 		i = end
 	}
 
-	w2.Close()
+	_ = w2.Close()
 
 	utils.Printfln("Writer data: %v", w1.String())
 }
@@ -281,16 +281,16 @@ func ReadersWriters13() {
 	for i := 0; true; {
 		end := i + 5
 		if end > len(text) {
-			w3.Write([]byte(text[i:]))
-			w3.Flush()
+			_, _ = w3.Write([]byte(text[i:]))
+			_ = w3.Flush()
 			break
 		}
 
-		w3.Write([]byte(text[i:end]))
+		_, _ = w3.Write([]byte(text[i:end]))
 		i = end
 	}
 
-	w2.Close()
+	_ = w2.Close()
 
 	utils.Printfln("Writer data: %v", w1.String())
 }
@@ -344,7 +344,7 @@ func ReadersWriters16() {
 	var w1 strings.Builder
 	template := "%s %s %.2f NOK"
 
-	utils.WriteFormatted(&w1, template, "Milk", "Food", 23.36)
+	_, _ = utils.WriteFormatted(&w1, template, "Milk", "Food", 23.36)
 
 	utils.Printfln("Writer: %v", w1.String())
 }

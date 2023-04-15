@@ -24,5 +24,5 @@ func WriteFormatted(writer io.Writer, template string, vals ...interface{}) (n i
 
 func WriteReplaced(writer io.Writer, str string, subs ...string) {
 	replacer := strings.NewReplacer(subs...)
-	replacer.WriteString(writer, str)
+	_, _ = replacer.WriteString(writer, str)
 }

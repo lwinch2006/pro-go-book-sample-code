@@ -23,7 +23,7 @@ func (cw *CustomWriter) Write(slice []byte) (count int, err error) {
 
 func (cw *CustomWriter) Close() (err error) {
 	if closer, ok := cw.writer.(io.Closer); ok {
-		closer.Close()
+		_ = closer.Close()
 	}
 
 	utils.Printfln("Custom writer total number of writes is %v", cw.count)
