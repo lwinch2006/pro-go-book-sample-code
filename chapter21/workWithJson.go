@@ -19,7 +19,7 @@ func WorkWithJson1() {
 	enc := json.NewEncoder(&w1)
 
 	for _, value := range []interface{}{true, "Milk", 1, 23.36, 'Æ', ptr} {
-		enc.Encode(value)
+		_ = enc.Encode(value)
 	}
 
 	fmt.Println(w1.String())
@@ -38,7 +38,7 @@ func WorkWithJson2() {
 	enc := json.NewEncoder(&w1)
 
 	for _, value := range []interface{}{arr1, arr2, arr3, arr4} {
-		enc.Encode(value)
+		_ = enc.Encode(value)
 	}
 
 	fmt.Println(w1.String())
@@ -54,7 +54,7 @@ func WorkWithJson3() {
 
 	var w1 strings.Builder
 	enc := json.NewEncoder(&w1)
-	enc.Encode(map1)
+	_ = enc.Encode(map1)
 
 	fmt.Println(w1.String())
 }
@@ -66,7 +66,7 @@ func WorkWithJson4() {
 
 	var w1 strings.Builder
 	enc := json.NewEncoder(&w1)
-	enc.Encode(p1)
+	_ = enc.Encode(p1)
 
 	fmt.Println(w1.String())
 }
@@ -78,7 +78,7 @@ func WorkWithJson5() {
 
 	var w1 strings.Builder
 	enc := json.NewEncoder(&w1)
-	enc.Encode(p1)
+	_ = enc.Encode(p1)
 
 	fmt.Println(w1.String())
 }
@@ -92,7 +92,7 @@ func WorkWithJson6() {
 
 	var w1 strings.Builder
 	enc := json.NewEncoder(&w1)
-	enc.Encode(p1)
+	_ = enc.Encode(p1)
 
 	fmt.Println(w1.String())
 }
@@ -105,7 +105,7 @@ func WorkWithJson7() {
 	arr1 := []models.Named{p1, p2}
 	var w1 strings.Builder
 	enc := json.NewEncoder(&w1)
-	enc.Encode(arr1)
+	_ = enc.Encode(arr1)
 
 	fmt.Println(w1.String())
 }
