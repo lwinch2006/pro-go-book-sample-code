@@ -19,6 +19,8 @@ func main() {
 	arrays5()
 
 	fmt.Println()
+	slice0()
+	fmt.Println()
 	slice1()
 	fmt.Println()
 	slice2()

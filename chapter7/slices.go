@@ -6,6 +6,24 @@ import (
 	"sort"
 )
 
+func slice0() {
+	fmt.Println("slice0()")
+
+	var arr1 []string
+	arr2 := []string{}
+
+	fmt.Println("Array 1:", arr1, "Length:", len(arr1), "Capacity:", cap(arr1))
+	fmt.Println("Array 2:", arr2, "Length:", len(arr2), "Capacity:", cap(arr2))
+
+	arr1 = append(arr1, "arr1")
+	arr2 = append(arr2, "arr2")
+
+	copy(arr2, arr1)
+
+	fmt.Println("Array 1:", arr1, "Length:", len(arr1), "Capacity:", cap(arr1))
+	fmt.Println("Array 2:", arr2, "Length:", len(arr2), "Capacity:", cap(arr2))
+}
+
 func slice1() {
 	fmt.Println("slice1()")
 
