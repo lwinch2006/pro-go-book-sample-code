@@ -52,4 +52,7 @@ func main() {
 
 	fmt.Println()
 	WorkWithJson16()
+
+	fmt.Println()
+	WorkWithJson17()
 }

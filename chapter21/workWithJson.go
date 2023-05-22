@@ -345,3 +345,15 @@ func WorkWithJson16() {
 		utils.Printfln("Product %v of category %v with price %v and discount %v", p.Name, p.Category, p.Price, p.Discount)
 	}
 }
+
+func WorkWithJson17() {
+	fmt.Println("WorkWithJson17()")
+
+	p1 := &models.Product{
+		Name:     "Milk",
+		Category: "Food",
+		Price:    23.35,
+	}
+
+	fmt.Println(*p1)
+}
