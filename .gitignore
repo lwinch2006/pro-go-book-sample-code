@@ -414,3 +414,6 @@ mathAndSorting
 timeAndDate
 readersWriters
 workWithJson
+workWithFiles
+totalPriceReport*.txt
+temp*.json

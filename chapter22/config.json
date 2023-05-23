@@ -1,0 +1,20 @@
+{
+  "Username": "Alice",
+  "AdditionalProducts": [
+    {
+      "Name": "Jacket",
+      "Category": "Clothes",
+      "Price": 98.99
+    },
+    {
+      "Name": "Shoes",
+      "Category": "Clothes",
+      "Price": 78.89
+    },
+    {
+      "Name": "Dress",
+      "Category": "Clothes",
+      "Price": 123.34
+    }
+  ]
+}
