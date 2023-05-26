@@ -83,7 +83,7 @@ func WorkWithHtml6() {
 
 	if allTemplates, err := template.ParseGlob(filepath.Join(constants.HtmlTemplatesRootDir, "*")); err == nil {
 		t := allTemplates.Lookup("template2.html")
-		workWithHtml6_1(t)
+		_ = workWithHtml6_1(t)
 	} else {
 		utils.Printfln("Load template error: %v", err.Error())
 	}
