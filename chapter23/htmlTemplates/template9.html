@@ -1,0 +1,27 @@
+{{- define "formattedPrice" -}}
+    {{printf "$%.2f" .}}
+{{- end -}}
+
+{{- define "cheapProduct" -}}
+    <h1>Cheap product: Name: {{.Name}}, Category: {{.Category}}, Price: {{template "formattedPrice" .Price}}</h1>
+{{- end -}}
+
+{{- define "expensiveProduct" -}}
+    <h1>Expensive product: Name: {{.Name}}, Category: {{.Category}}, Price: {{template "formattedPrice" .Price}}</h1>
+{{- end -}}
+
+<h1>There are {{ len . }} products</h1>
+<p>
+    First product is {{ with $firstProduct := index . 0 }}{{ $firstProduct.Name }}{{end}}
+</p>
+<p>
+    {{- range slice .}}
+    {{if lt .Price 30.00 -}}
+        {{template "cheapProduct" .}}
+    {{- else if gt .Price 60.00 -}}
+        {{template "expensiveProduct" .}}
+    {{- else -}}
+        <h1>Midrange product: Name: {{.Name}}, Category: {{.Category}}, Price: {{printf "$%.2f" .Price }}</h1>
+    {{- end}}
+    {{- end}}
+</p>

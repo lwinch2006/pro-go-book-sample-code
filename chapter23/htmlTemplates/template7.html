@@ -1,0 +1,9 @@
+<h1>There are {{ len . }} products</h1>
+<p>
+    First product is {{ with $firstProduct := index . 0 }}{{ $firstProduct.Name }}{{end}}
+</p>
+<p>
+    {{range slice . 1 2 -}}
+        <h1>Name: {{.Name}}, Category: {{.Category}}, Price: {{printf "$%.2f" .Price }}</h1>
+    {{- end}}
+</p>

@@ -1,0 +1,6 @@
+<h1>There are {{ len . }} products</h1>
+<p>
+    {{range $i, $p := . -}}
+        <h1>Index: {{$i}}, Name: {{$p.Name}}, Category: {{$p.Category}}, Price: {{printf "$%.2f" $p.Price }}</h1>
+    {{end}}
+</p>

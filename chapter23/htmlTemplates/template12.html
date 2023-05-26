@@ -1,0 +1,6 @@
+{{ $length := len . -}}
+<h1>There are {{ $length }} products</h1>
+<h1>Category list</h1>>
+{{- range getProductsCategories .}}
+    <h2>Category: {{ toLower . }}</h2>
+{{- end}}

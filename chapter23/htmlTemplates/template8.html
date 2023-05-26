@@ -1,0 +1,15 @@
+<h1>There are {{ len . }} products</h1>
+<p>
+    First product is {{ with $firstProduct := index . 0 }}{{ $firstProduct.Name }}{{end}}
+</p>
+<p>
+    {{- range slice .}}
+    {{if lt .Price 30.00 -}}
+        <h1>Cheap product: Name: {{.Name}}, Category: {{.Category}}, Price: {{printf "$%.2f" .Price }}</h1>
+    {{- else if gt .Price 60.00 -}}
+        <h1>Expensive product: Name: {{.Name}}, Category: {{.Category}}, Price: {{printf "$%.2f" .Price }}</h1>
+    {{- else -}}
+        <h1>Midrange product: Name: {{.Name}}, Category: {{.Category}}, Price: {{printf "$%.2f" .Price }}</h1>
+    {{- end}}
+    {{- end}}
+</p>

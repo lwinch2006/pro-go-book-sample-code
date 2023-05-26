@@ -1,0 +1,4 @@
+There are {{ len . }} products
+{{range $i, $p := . -}}
+    Index: {{$i}}, Name: {{$p.Name}}, Category: {{$p.Category}}, Price: {{printf "$%.2f" $p.Price }}
+{{end}}

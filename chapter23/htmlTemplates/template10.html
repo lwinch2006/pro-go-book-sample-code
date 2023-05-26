@@ -1,0 +1,7 @@
+{{define "mainTemplate" -}}
+    <h1>This is the layout header</h1>
+    {{block "body" . -}}
+        <h2>There are {{ len . }} products</h2>
+    {{end -}}
+    <h1>This is the layout footer</h1>
+{{end}}
