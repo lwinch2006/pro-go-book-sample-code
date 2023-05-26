@@ -16,7 +16,3 @@ func (p *Product) ApplyTax() float64 {
 func (p *Product) ApplyDiscount(discount float64) float64 {
 	return p.Price - (p.Price * discount)
 }
-
-func GetName(p *Product) string {
-	return p.Name
-}
