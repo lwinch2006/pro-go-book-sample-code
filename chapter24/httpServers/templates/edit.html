@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>Pro Go</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+{{ $indexParamArray := index .Request.URL.Query "index" }}
+{{ if gt (len $indexParamArray) 0 }}
+    {{ $index := intVal (index $indexParamArray 0) }}
+    {{ if lt $index (len .Data)}}
+        {{ with index .Data $index}}
+            <h3 class="bg-primary text-white text-center p-2 m-2">Product</h3>
+            <form action="/forms/edit" class="m-2" method="POST">
+                <div class="form-group">
+                    <label>Index</label>
+                    <input disabled name="index" value="{{$index}}" class="form-control"/>
+                    <input name="index" type="hidden" value="{{$index}}"/>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" name="name" value="{{.Name}}"/>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input name="category" value="{{.Category}}" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input class="form-control" name="price" value="{{.Price}}"/>
+                </div>
+                <div class="mt-2">
+                    <button class="btn btn-primary" type="submit">Save</button>
+                    <a class="btn btn-secondary" href="/templates/">Cancel</a>
+                </div>
+            </form>
+        {{ end }}
+    {{ else }}
+        <h3 class="bg-danger text-white text-center p-2">No Product At Specified Index</h3>
+    {{end }}
+{{ else }}
+    <h3 class="bg-danger text-white text-center p-2">No Product At Specified Index</h3>
+{{end }}
+</body>
+</html>
