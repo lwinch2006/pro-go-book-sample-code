@@ -2,6 +2,7 @@ package main
 
 import (
 	"chapter13/store"
+	"chapter13/store/interfaces"
 	"fmt"
 )
 
@@ -70,7 +71,7 @@ func composition5() {
 func composition6() {
 	fmt.Println("composition6()")
 
-	products := []store.ItemForSale{
+	products := []interfaces.ItemForSale{
 		store.NewProduct("Milk", "Food", 23.36),
 		store.NewBoat("Yacht", "Leisure", 1000, 20, true),
 	}
@@ -83,7 +84,7 @@ func composition6() {
 func composition7() {
 	fmt.Println("composition7()")
 
-	products := []store.ItemForSale{
+	products := []interfaces.ItemForSale{
 		store.NewProduct("Milk", "Food", 23.36),
 		store.NewBoat("Yacht", "Leisure", 1000, 20, true),
 	}
@@ -105,7 +106,7 @@ func composition7() {
 func composition8() {
 	fmt.Println("composition8()")
 
-	products := []store.ItemForSale{
+	products := []interfaces.ItemForSale{
 		store.NewProduct("Milk", "Food", 23.36),
 		store.NewBoat("Yacht", "Leisure", 1000, 20, true),
 	}
@@ -113,7 +114,7 @@ func composition8() {
 	for _, product := range products {
 		switch item := product.(type) {
 		case store.Describable:
-			fmt.Println("Product name:", item.GetName()+",", "price:", item.(store.ItemForSale).PriceWithTax(0.25))
+			fmt.Println("Product name:", item.GetName()+",", "price:", item.(interfaces.ItemForSale).PriceWithTax(0.25))
 
 		default:
 			fmt.Println("Product price:", product.PriceWithTax(0.25))
@@ -124,7 +125,7 @@ func composition8() {
 func composition9() {
 	fmt.Println("composition9()")
 
-	products := []store.ItemForSale{
+	products := []interfaces.ItemForSale{
 		store.NewProduct("Milk", "Food", 23.36),
 		store.NewBoat("Yacht", "Leisure", 1000, 20, true),
 	}
