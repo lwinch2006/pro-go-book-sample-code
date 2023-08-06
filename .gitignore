@@ -395,6 +395,7 @@ FodyWeavers.xsd
 
 # Misc folders & files
 .idea/
+log*.txt
 partyinvites
 basicfeatures
 operations
@@ -425,3 +426,4 @@ workWithHtml
 28_Reflection
 29_Reflection
 30_CoordinatingGoroutines
+31_UnitTesting
